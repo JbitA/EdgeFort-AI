@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "experiment": "github-value-showcase-v1",
+  "dataset": {
+    "name": "scikit-learn digits (offline smoke track)",
+    "train_rows": 1257,
+    "test_rows": 540,
+    "features": 64,
+    "classes": 10,
+    "subject_split": null,
+    "provenance": {
+      "dataset": "sklearn-digits",
+      "license": "offline smoke fixture; see scikit-learn dataset documentation",
+      "note": "Offline smoke dataset; use uci-har for the public edge-sensor showcase."
+    }
+  },
+  "model_tradeoffs": {
+    "float32": {
+      "clean_accuracy": 0.9666666666666667,
+      "shifted_accuracy": 0.9648148148148148,
+      "ece": 0.07023981762585318,
+      "p95_latency_ms_batch32": 0.010811050833581259,
+      "max_rss_mb": 195.0234375,
+      "artifact_bytes": 3013
+    },
+    "int8_weight": {
+      "clean_accuracy": 0.9666666666666667,
+      "shifted_accuracy": 0.9648148148148148,
+      "ece": 0.07027230825617536,
+      "p95_latency_ms_batch32": 0.011315950723655991,
+      "max_rss_mb": 195.0234375,
+      "artifact_bytes": 1480
+    },
+    "int8_dynamic": {
+      "clean_accuracy": 0.9666666666666667,
+      "shifted_accuracy": 0.9648148148148148,
+      "ece": 0.07037166393513336,
+      "p95_latency_ms_batch32": 0.05172435094209506,
+      "max_rss_mb": 195.0234375,
+      "artifact_bytes": 1481
+    }
+  },
+  "drift": {
+    "threshold": 0.2,
+    "clean_mean_psi": 0.010007704224176888,
+    "clean_max_psi": 0.04018207344240204,
+    "clean_fraction_over_threshold": 0.0,
+    "shifted_mean_psi": 0.30738216862906875,
+    "shifted_max_psi": 7.427146446627278,
+    "shifted_fraction_over_threshold": 0.109375,
+    "shift_proxy": "10% feature gain+bias plus 5% feature dropout; clipped to observed range"
+  },
+  "deployment": {
+    "baseline_release": "1.0.0",
+    "baseline_result": "accepted",
+    "quantized_release": "1.1.0",
+    "quantized_result": "accepted",
+    "bad_release": "1.2.0",
+    "bad_signed_release": "rejected by health gate (accuracy below minimum)",
+    "active_after_bad_candidate": "1.1.0",
+    "rollback_result": "succeeded",
+    "active_after_rollback": "1.0.0",
+    "old_release_replay": "rejected by anti-rollback policy (release sequence is not newer than trusted floor)",
+    "highest_release_sequence": 2
+  },
+  "limitations": [
+    "Latency/RSS values are host-reference measurements, not target-device qualification.",
+    "The drift scenario is a deterministic feature-space proxy, not a physical sensor simulator.",
+    "The linear classifier is intentionally small; the experiment showcases lifecycle controls."
+  ]
+}

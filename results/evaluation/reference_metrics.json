@@ -1,0 +1,32 @@
+{
+  "float": {
+    "accuracy": 0.9666666666666667,
+    "noisy_accuracy_sigma_0_12": 0.9462962962962963,
+    "ece": 0.07023981762585318,
+    "artifact_bytes": 3013,
+    "p95_latency_ms_32": 0.008718150638742365,
+    "deploy_accuracy": 0.9666666666666667
+  },
+  "int8_weight": {
+    "accuracy": 0.9666666666666667,
+    "noisy_accuracy_sigma_0_12": 0.9481481481481482,
+    "ece": 0.07027230825617536,
+    "artifact_bytes": 1480,
+    "p95_latency_ms_32": 0.010153198763873654,
+    "deploy_accuracy": 0.9666666666666667
+  },
+  "int8_dynamic": {
+    "accuracy": 0.9666666666666667,
+    "noisy_accuracy_sigma_0_12": 0.9481481481481482,
+    "ece": 0.07037166393513336,
+    "artifact_bytes": 1481,
+    "p95_latency_ms_32": 0.0504735998219985,
+    "deploy_accuracy": 0.9666666666666667
+  },
+  "deployment": {
+    "active_before_rollback": "1.0.2",
+    "rollback_ok": true,
+    "active_after_rollback": "1.0.1",
+    "highest_release_sequence": 3
+  }
+}

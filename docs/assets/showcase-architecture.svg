@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Edge AI Deployment Platform showcase architecture</title>
+  <desc id="desc">Public sensor data flows through model training, signing, immutable registry, isolated qualification, A/B deployment, bounded inference, drift monitoring, and rollback.</desc>
+  <rect width="1200" height="560" rx="28" fill="#0b1020"/>
+  <style>
+    text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .h{font-weight:700;font-size:28px;fill:#f8fafc}.s{font-size:15px;fill:#cbd5e1}.t{font-weight:650;font-size:16px;fill:#f8fafc}.d{font-size:12px;fill:#cbd5e1}
+    .box{fill:#111a2e;stroke:#334155;stroke-width:2}.secure{fill:#10251d;stroke:#22c55e;stroke-width:2}.risk{fill:#2a1d13;stroke:#f59e0b;stroke-width:2}.flow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+  <text class="h" x="42" y="50">Secure model lifecycle, demonstrated on public edge-sensor data</text>
+  <text class="s" x="42" y="78">The classifier is intentionally small; the experiment makes release safety, rollback, drift, and containment observable.</text>
+
+  <rect class="box" x="42" y="125" width="185" height="100" rx="14"/>
+  <text class="t" x="62" y="155">UCI HAR</text><text class="d" x="62" y="181">smartphone IMU</text><text class="d" x="62" y="201">CC BY 4.0</text>
+
+  <rect class="box" x="270" y="125" width="185" height="100" rx="14"/>
+  <text class="t" x="290" y="155">Model variants</text><text class="d" x="290" y="181">float32</text><text class="d" x="290" y="201">weight / dynamic int8</text>
+
+  <rect class="secure" x="498" y="125" width="205" height="100" rx="14"/>
+  <text class="t" x="518" y="155">Signed release</text><text class="d" x="518" y="181">Ed25519 + SHA-256</text><text class="d" x="518" y="201">canonical manifest</text>
+
+  <rect class="secure" x="746" y="125" width="185" height="100" rx="14"/>
+  <text class="t" x="766" y="155">Qualification</text><text class="d" x="766" y="181">fresh child process</text><text class="d" x="766" y="201">accuracy / ECE / p95 / RSS</text>
+
+  <rect class="secure" x="974" y="125" width="184" height="100" rx="14"/>
+  <text class="t" x="994" y="155">A/B activation</text><text class="d" x="994" y="181">anti-rollback floor</text><text class="d" x="994" y="201">crash recovery</text>
+
+  <path class="flow" d="M227 175 H265"/><path class="flow" d="M455 175 H493"/><path class="flow" d="M703 175 H741"/><path class="flow" d="M931 175 H969"/>
+
+  <rect class="box" x="250" y="320" width="220" height="112" rx="14"/>
+  <text class="t" x="270" y="350">Bounded inference</text><text class="d" x="270" y="376">queue + body + tensor caps</text><text class="d" x="270" y="397">safe versioned IPC</text><text class="d" x="270" y="418">killable backend worker</text>
+
+  <rect class="box" x="500" y="320" width="200" height="112" rx="14"/>
+  <text class="t" x="520" y="350">Drift evidence</text><text class="d" x="520" y="376">PSI profile</text><text class="d" x="520" y="397">quality under shift</text><text class="d" x="520" y="418">offline telemetry</text>
+
+  <rect class="risk" x="730" y="320" width="210" height="112" rx="14"/>
+  <text class="t" x="750" y="350">Signed-but-bad model</text><text class="d" x="750" y="376">signature passes</text><text class="d" x="750" y="397">health gate rejects</text><text class="d" x="750" y="418">active release unchanged</text>
+
+  <rect class="secure" x="970" y="320" width="188" height="112" rx="14"/>
+  <text class="t" x="990" y="350">Rollback</text><text class="d" x="990" y="376">switch previous slot</text><text class="d" x="990" y="397">floor does not decrease</text><text class="d" x="990" y="418">old replay rejected</text>
+
+  <path class="flow" d="M1066 225 V276 H360 V315"/>
+  <path class="flow" d="M470 376 H495"/><path class="flow" d="M700 376 H725"/><path class="flow" d="M940 376 H965"/>
+
+  <text class="s" x="42" y="510">Showcase question: can a device prove what it runs, reject a bad-but-authentic release, survive backend failure, detect shift, and recover without cloud control?</text>
+</svg>

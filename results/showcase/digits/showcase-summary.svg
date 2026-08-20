@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430">
+<rect width="100%" height="100%" rx="18" fill="#0b1020"/>
+<style>text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-weight:700;font-size:22px;fill:#f8fafc}.s{font-size:14px;fill:#cbd5e1}.n{font-size:13px;fill:#e2e8f0}.v{font-weight:700;font-size:13px;fill:#f8fafc}</style>
+<text class="h" x="32" y="42">Edge AI showcase — quality under shift + artifact footprint</text>
+<text class="s" x="32" y="67">scikit-learn digits (offline smoke track)</text>
+<text class="s" x="32" y="94">Accuracy bars: clean / shifted feature-space proxy. Footprint shown at right.</text>
+<text class="n" x="32" y="150">float32</text>
+<rect x="175" y="128" width="470" height="18" rx="4" fill="#1e293b"/>
+<rect x="175" y="128" width="454.3" height="8" rx="4" fill="#22c55e"/>
+<rect x="175" y="138" width="453.5" height="8" rx="4" fill="#f59e0b"/>
+<text class="v" x="659" y="140">96.7% / 96.5%</text>
+<rect x="760" y="128" width="120.0" height="18" rx="4" fill="#60a5fa"/>
+<text class="v" x="760" y="164">3,013 B</text>
+<text class="n" x="32" y="240">weight int8</text>
+<rect x="175" y="218" width="470" height="18" rx="4" fill="#1e293b"/>
+<rect x="175" y="218" width="454.3" height="8" rx="4" fill="#22c55e"/>
+<rect x="175" y="228" width="453.5" height="8" rx="4" fill="#f59e0b"/>
+<text class="v" x="659" y="230">96.7% / 96.5%</text>
+<rect x="760" y="218" width="58.9" height="18" rx="4" fill="#60a5fa"/>
+<text class="v" x="760" y="254">1,480 B</text>
+<text class="n" x="32" y="330">dynamic int8</text>
+<rect x="175" y="308" width="470" height="18" rx="4" fill="#1e293b"/>
+<rect x="175" y="308" width="454.3" height="8" rx="4" fill="#22c55e"/>
+<rect x="175" y="318" width="453.5" height="8" rx="4" fill="#f59e0b"/>
+<text class="v" x="659" y="320">96.7% / 96.5%</text>
+<rect x="760" y="308" width="59.0" height="18" rx="4" fill="#60a5fa"/>
+<text class="v" x="760" y="344">1,481 B</text>
+<text class="s" x="32" y="392">Shift PSI mean 0.307 · features over threshold 10.9% · bad signed release: rejected by health gate (accuracy below minimum)</text>
+</svg>
