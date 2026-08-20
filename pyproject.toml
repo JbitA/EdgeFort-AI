@@ -1,0 +1,39 @@
+[build-system]
+requires=["setuptools>=68"]
+build-backend="setuptools.build_meta"
+
+[project]
+name="edge-ai-deployment-platform"
+version="1.0.0"
+description="Secure local-first edge AI model lifecycle, quantization, deployment and inference runtime"
+readme="README.md"
+requires-python=">=3.11"
+license="MIT"
+authors=[{name="Edge AI Platform Maintainers"}]
+dependencies=[
+  "numpy>=2.0",
+  "scikit-learn>=1.5",
+  "cryptography>=43",
+  "fastapi>=0.115",
+  "pydantic>=2.9",
+  "PyYAML>=6.0",
+  "uvicorn>=0.30"
+]
+[project.optional-dependencies]
+dev=["pytest>=8","coverage>=7","build>=1","httpx>=0.28","packaging>=24"]
+onnx=["onnxruntime>=1.18"]
+[project.scripts]
+edgeai="edgeai.cli:main"
+[tool.setuptools.packages.find]
+where=["src"]
+[tool.pytest.ini_options]
+testpaths=["tests"]
+addopts="-ra"
+[tool.coverage.run]
+branch=true
+source=["edgeai"]
+[tool.coverage.report]
+fail_under=90
+precision=2
+show_missing=true
+skip_covered=true

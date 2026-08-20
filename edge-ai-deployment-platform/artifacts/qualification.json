@@ -1,0 +1,106 @@
+{
+  "release": "unreleased",
+  "qualification_date": "2026-08-20",
+  "python_tests": {
+    "passed": 301,
+    "failed": 0
+  },
+  "coverage": {
+    "combined_percent": 90.49791707994446,
+    "statement_percent": 91.76805591509189,
+    "branch_percent": 86.33276740237692,
+    "statements": 3863,
+    "covered_statements": 3545,
+    "branches": 1178,
+    "covered_branches": 1017,
+    "gate_percent": 90.0,
+    "precision": 2
+  },
+  "native": {
+    "cxx_standard": 20,
+    "release_ctest": "passed",
+    "asan_ubsan_ctest": "passed"
+  },
+  "package": {
+    "wheel": "edge_ai_deployment_platform-1.0.0-py3-none-any.whl",
+    "sha256": "8d55d10449fb18f4ae769e67912f8fff259f61248c8bb6d8442c3ff376a2eef8",
+    "build_method": "offline pip wheel --no-build-isolation --no-deps"
+  },
+  "reference_evaluation": {
+    "float": {
+      "accuracy": 0.9666666666666667,
+      "noisy_accuracy_sigma_0_12": 0.9462962962962963,
+      "ece": 0.07023981762585318,
+      "artifact_bytes": 3013,
+      "p95_latency_ms_32": 0.008718150638742365,
+      "deploy_accuracy": 0.9666666666666667
+    },
+    "int8_weight": {
+      "accuracy": 0.9666666666666667,
+      "noisy_accuracy_sigma_0_12": 0.9481481481481482,
+      "ece": 0.07027230825617536,
+      "artifact_bytes": 1480,
+      "p95_latency_ms_32": 0.010153198763873654,
+      "deploy_accuracy": 0.9666666666666667
+    },
+    "int8_dynamic": {
+      "accuracy": 0.9666666666666667,
+      "noisy_accuracy_sigma_0_12": 0.9481481481481482,
+      "ece": 0.07037166393513336,
+      "artifact_bytes": 1481,
+      "p95_latency_ms_32": 0.0504735998219985,
+      "deploy_accuracy": 0.9666666666666667
+    },
+    "deployment": {
+      "active_before_rollback": "1.0.2",
+      "rollback_ok": true,
+      "active_after_rollback": "1.0.1",
+      "highest_release_sequence": 3
+    }
+  },
+  "robustness_summary": {
+    "float_clean_mean": 0.9670370370370371,
+    "float_clean_min": 0.9592592592592593,
+    "float_noise_008_mean": 0.9607407407407406,
+    "float_noise_008_min": 0.9537037037037037,
+    "float_noise_016_mean": 0.9388888888888888,
+    "float_noise_016_min": 0.9259259259259259,
+    "weight_int8_clean_mean": 0.9674074074074074,
+    "weight_int8_clean_min": 0.9592592592592593,
+    "weight_int8_noise_008_mean": 0.9607407407407408,
+    "weight_int8_noise_008_min": 0.9537037037037037,
+    "weight_int8_noise_016_mean": 0.9385185185185184,
+    "weight_int8_noise_016_min": 0.9259259259259259,
+    "dynamic_int8_clean_mean": 0.9675925925925926,
+    "dynamic_int8_clean_min": 0.9592592592592593,
+    "dynamic_int8_noise_008_mean": 0.9601851851851851,
+    "dynamic_int8_noise_008_min": 0.9518518518518518,
+    "dynamic_int8_noise_016_mean": 0.9390740740740741,
+    "dynamic_int8_noise_016_min": 0.9259259259259259
+  },
+  "showcase": {
+    "primary_dataset": "UCI Human Activity Recognition Using Smartphones",
+    "dataset_license": "CC BY 4.0",
+    "dataset_doi": "10.24432/C54S4K",
+    "safe_acquisition_and_provenance": "implemented and unit-tested",
+    "real_data_experiment": "implemented; not executed in this sandbox because outbound dataset download is unavailable",
+    "offline_smoke": "passed and committed under results/showcase/digits",
+    "generated_outputs": [
+      "showcase.json",
+      "showcase-summary.svg",
+      "README.md"
+    ],
+    "experiment_claims": [
+      "quantization footprint/quality trade-off",
+      "PSI shift response",
+      "signed-but-bad release rejection",
+      "A/B rollback with anti-rollback floor"
+    ]
+  },
+  "qualification_notes": [
+    "Coverage was collected in deterministic shards and combined; no source files were excluded.",
+    "The public UCI HAR download cannot be executed in this sandbox; acquisition/loader paths are tested with a schema-faithful local ZIP fixture.",
+    "Latency/RSS evidence is host-reference only, not target-device qualification.",
+    "Real ONNX Runtime native execution remains outside this qualification snapshot."
+  ]
+}
